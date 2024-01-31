@@ -1,0 +1,26 @@
+{
+  "name": "@trio/dynamic-module-federation",
+  "version": "0.0.1",
+  "description": "React hook for webpack module federation",
+  "main": "dist/umd/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint --fix --ignore-path .gitignore src",
+    "lint:prettier": "pretty-quick",
+    "commit": "git cz",
+    "test": "echo \"no tests found\" && exit 0",
+    "semantic-release": "npx --package semantic-release@^17.0.4 semantic-release",
+    "build": "rollup -c --environment NODE_ENV:production"
+  },
+  "keywords": [
+    "module federation",
+    "hooks",
+    "webpack"
+  ],
+  "author": "Trio team",
+  "license": "ISC"
+}
