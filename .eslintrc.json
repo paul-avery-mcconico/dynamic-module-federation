@@ -1,0 +1,20 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+    // Add any additional rules or overrides as needed
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
