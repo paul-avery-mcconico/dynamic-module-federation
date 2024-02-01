@@ -1,3 +1,3 @@
-export { useDynamicScipt } from "./hooks/useDynamicScipt";
-export { getModuleFromScope } from "./utils/getModuleFromScope";
-export { default } from "./components/MFLoader";
+export { useDynamicScript } from './hooks/useDynamicScript'
+export { getModuleFromScope } from './utils/getModuleFromScope'
+export { default } from './components/MFLoader'
