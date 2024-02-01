@@ -21,7 +21,7 @@
     "hooks",
     "webpack"
   ],
-  "author": "Trio team",
+  "author": "Trio team - ABC Utils",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.23.9",

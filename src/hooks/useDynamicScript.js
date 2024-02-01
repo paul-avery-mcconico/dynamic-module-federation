@@ -1,44 +1,45 @@
-import injectScript from "../utils";
+import { useEffect, useState } from 'react'
+import injectScript from '../utils'
 
-export const useDynamicScipt = ({
+export const useDynamicScript = ({
   remoteUrl,
   onLoadCallback = null,
   scope = null,
   errorLogCallback = () => {},
 }) => {
-  const [ready, setReady] = useState(false);
-  const [error, setError] = useState(false);
-  const scriptId = scope ? `remote-entry-${scope}` : null;
+  const [ready, setReady] = useState(false)
+  const [error, setError] = useState(false)
+  const scriptId = scope ? `remote-entry-${scope}` : null
 
   const onSuccess = (isAlreadyLoaded = false) => {
-    if (typeof onLoadCallback === "function") {
-      onLoadCallback();
+    if (typeof onLoadCallback === 'function') {
+      onLoadCallback()
     }
     if (!isAlreadyLoaded) {
-      document.getElementById(scriptId).setAttribute("data-loaded", "true");
+      document.getElementById(scriptId).setAttribute('data-loaded', 'true')
     }
-    setReady(true);
-  };
-  const onerror = () => {
-    setError(true);
+    setReady(true)
+  }
+  const onError = () => {
+    setError(true)
     errorLogCallback({
       errorMessage: `error while loading remoteEntry.js for ${scope}`,
-    });
-  };
+    })
+  }
 
   useEffect(() => {
-    if (!remoteUrl) return;
-    const existingScript = document.getElementById(scriptId);
+    if (!remoteUrl) return
+    const existingScript = document.getElementById(scriptId)
 
     if (existingScript) {
-      if (existingScript.hasAttribute("data-loaded")) {
-        onSuccess(true);
+      if (existingScript.hasAttribute('data-loaded')) {
+        onSuccess(true)
       } else {
-        existingScript.addEventListener("load", onSuccess);
+        existingScript.addEventListener('load', onSuccess)
       }
       return () => {
-        existingScript.removeEventListener("load", onSuccess);
-      };
+        existingScript.removeEventListener('load', onSuccess)
+      }
     }
     injectScript({
       onSuccess,
@@ -46,9 +47,9 @@ export const useDynamicScipt = ({
       scriptId,
       scope,
       remoteUrl,
-    });
-  }, [remoteUrl]);
-  return { ready, error };
-};
+    })
+  }, [remoteUrl])
+  return { ready, error }
+}
 
-export default useDynamicScipt;
+export default useDynamicScript
