@@ -31,7 +31,7 @@ const plugins = () => [
 
 export default [
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     plugins: plugins(true),
     external: Object.keys(globals),
     output: [
