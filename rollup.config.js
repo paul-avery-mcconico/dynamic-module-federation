@@ -5,6 +5,7 @@ import babel from '@rollup/plugin-babel'
 import clear from 'rollup-plugin-clear'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import terser from '@rollup/plugin-terser'
+import typescript from '@rollup/plugin-typescript'
 
 const pkg = require('./package.json')
 const year = new Date().getFullYear()
@@ -27,6 +28,7 @@ const plugins = () => [
   nodeResolve(),
   commonjs(),
   json(),
+  typescript()
 ]
 
 export default [

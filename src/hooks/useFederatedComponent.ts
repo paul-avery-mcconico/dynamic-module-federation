@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ComponentType } from 'react'
-import getModuleFromScope from '../utils/getModuleFromScope'
-import useDynamicScript from './useDynamicScript'
+import { getModuleFromScope } from '../utils/getModuleFromScope'
+import { useDynamicScript } from './useDynamicScript'
 import { UseFederatedComponentProps } from '../types'
 
 export const useFederatedComponent = ({
@@ -32,5 +32,3 @@ export const useFederatedComponent = ({
   }, [Component, ready])
   return { error, Component }
 }
-
-export default useFederatedComponent

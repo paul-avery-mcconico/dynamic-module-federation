@@ -28,5 +28,3 @@ export const getModuleFromScope = ({
     }
   }
 }
-
-export default getModuleFromScope

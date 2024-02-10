@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from 'react'
-import useFederatedComponent from '../hooks/useFederatedComponent'
+import {useFederatedComponent} from '../hooks/useFederatedComponent'
 import { ModFedRemoteLoaderProps } from '../types'
 
 /**

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import injectScript from '../utils'
+import { injectScript } from '../utils'
 import { UseDynamicScriptProps } from '../types'
 
 export const useDynamicScript = ({
@@ -56,5 +56,3 @@ export const useDynamicScript = ({
   }, [remoteUrl])
   return { ready, error }
 }
-
-export default useDynamicScript

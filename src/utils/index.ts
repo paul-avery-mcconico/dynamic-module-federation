@@ -21,4 +21,3 @@ export const injectScript = ({
   }
   document.head.appendChild(element)
 }
-export default injectScript
