@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import injectScript from '../utils'
+import { injectScript } from '../utils'
+import { UseDynamicScriptProps } from '../types'
 
 export const useDynamicScript = ({
   remoteUrl,
-  onLoadCallback = null,
-  scope = null,
+  onLoadCallback = () => {},
+  scope,
   errorLogCallback = () => {},
-}) => {
+}: UseDynamicScriptProps) => {
   const [ready, setReady] = useState(false)
   const [error, setError] = useState(false)
   const scriptId = scope ? `remote-entry-${scope}` : null
@@ -15,8 +16,8 @@ export const useDynamicScript = ({
     if (typeof onLoadCallback === 'function') {
       onLoadCallback()
     }
-    if (!isAlreadyLoaded) {
-      document.getElementById(scriptId).setAttribute('data-loaded', 'true')
+    if (!isAlreadyLoaded && scriptId) {
+      document.getElementById(scriptId)?.setAttribute('data-loaded', 'true')
     }
     setReady(true)
   }
@@ -29,16 +30,20 @@ export const useDynamicScript = ({
 
   useEffect(() => {
     if (!remoteUrl) return
-    const existingScript = document.getElementById(scriptId)
+    if (scriptId) {
+      const existingScript = document.getElementById(
+        scriptId,
+      ) as HTMLScriptElement
 
-    if (existingScript) {
-      if (existingScript.hasAttribute('data-loaded')) {
-        onSuccess(true)
-      } else {
-        existingScript.addEventListener('load', onSuccess)
-      }
-      return () => {
-        existingScript.removeEventListener('load', onSuccess)
+      if (existingScript) {
+        if (existingScript.hasAttribute('data-loaded')) {
+          onSuccess(true)
+        } else {
+          existingScript.addEventListener('load', () => onSuccess())
+        }
+        return () => {
+          existingScript.removeEventListener('load', () => onSuccess())
+        }
       }
     }
     injectScript({
@@ -51,5 +56,3 @@ export const useDynamicScript = ({
   }, [remoteUrl])
   return { ready, error }
 }
-
-export default useDynamicScript

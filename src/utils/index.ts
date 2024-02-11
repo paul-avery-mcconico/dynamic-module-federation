@@ -1,10 +1,12 @@
+import { InjectScriptProps } from "../types"
+
 export const injectScript = ({
   remoteUrl,
   scriptId,
   scope,
-  onSuccess,
-  onError,
-}) => {
+  onSuccess = () => {},
+  onError = () => {},
+}: InjectScriptProps) => {
   const element = document.createElement('script')
   element.src = remoteUrl
   element.type = 'text/javascript'
@@ -13,10 +15,9 @@ export const injectScript = ({
     element.id = scriptId
   }
   element.onload = () => onSuccess()
-  element.onError = () => {
+  element.onerror = () => {
     onError()
     console.error(`caught error while loading remote entry for ${scope}`)
   }
   document.head.appendChild(element)
 }
-export default injectScript

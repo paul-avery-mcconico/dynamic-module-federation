@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import useFederatedComponent from '../hooks/useFederatedComponent'
+import {useFederatedComponent} from '../hooks/useFederatedComponent'
+import { ModFedRemoteLoaderProps } from '../types'
 
 /**
  *
@@ -13,15 +13,16 @@ import useFederatedComponent from '../hooks/useFederatedComponent'
  * @param {Object} props // props required to render a remote component
  * @returns
  */
-export const MFLoader = ({
+
+const ModFedRemoteLoader = ({
   remoteUrl,
   scope,
   module,
   props,
   loadingComponent,
   remoteEntryLoadedCallback,
-  errorLogCallback,
-}) => {
+  errorLogCallback = () => {},
+}: ModFedRemoteLoaderProps) => {
   const { error, Component } = useFederatedComponent({
     remoteUrl,
     scope,
@@ -43,20 +44,4 @@ export const MFLoader = ({
   )
 }
 
-MFLoader.defaultProps = {
-  loadingComponent: () => {},
-  remoteEntryLoadedCallback: () => {},
-  errorLogCallback: () => {},
-}
-
-MFLoader.propTypes = {
-  remoteUrl: PropTypes.string.isRequired,
-  scope: PropTypes.string.isRequired,
-  module: PropTypes.string.isRequired,
-  props: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
-  loadingComponent: PropTypes.func,
-  remoteEntryLoadedCallback: PropTypes.func,
-  errorLogCallback: PropTypes.func,
-}
-
-export default MFLoader
+export default ModFedRemoteLoader

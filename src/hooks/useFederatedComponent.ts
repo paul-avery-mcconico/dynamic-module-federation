@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import getModuleFromScope from '../utils/getModuleFromScope'
-import useDynamicScript from './useDynamicScript'
+import React, { useEffect, useState, ComponentType } from 'react'
+import { getModuleFromScope } from '../utils/getModuleFromScope'
+import { useDynamicScript } from './useDynamicScript'
+import { UseFederatedComponentProps } from '../types'
 
 export const useFederatedComponent = ({
   remoteUrl,
@@ -8,8 +9,8 @@ export const useFederatedComponent = ({
   module,
   remoteEntryLoadedCallback = () => {},
   errorLogCallback = () => {},
-}) => {
-  const [Component, setComponent] = useState(null)
+}: UseFederatedComponentProps) => {
+  const [Component, setComponent] = useState<ComponentType | null>(null)
   const { ready, error } = useDynamicScript({
     remoteUrl,
     onLoadCallback: remoteEntryLoadedCallback,
@@ -31,5 +32,3 @@ export const useFederatedComponent = ({
   }, [Component, ready])
   return { error, Component }
 }
-
-export default useFederatedComponent
