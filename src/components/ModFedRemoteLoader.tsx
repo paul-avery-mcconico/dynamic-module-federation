@@ -18,7 +18,7 @@ const ModFedRemoteLoader = ({
   remoteUrl,
   scope,
   module,
-  props,
+  props = {},
   loadingComponent,
   remoteEntryLoadedCallback,
   errorLogCallback = () => {},
