@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/abc-utils/dynamic-module-federation/compare/v0.1.1...v0.2.0) (2024-03-06)
+
+
+### Features
+
+* **documentation:** initial documentation added ([5271c7a](https://github.com/abc-utils/dynamic-module-federation/commit/5271c7a967cc4a96c88c3a27a78cd371526e724c))
+
 ## [0.1.1](https://github.com/abc-utils/dynamic-module-federation/compare/v0.1.0...v0.1.1) (2024-03-06)
 
 
