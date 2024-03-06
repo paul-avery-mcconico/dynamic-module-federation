@@ -1,3 +1,10 @@
+## [0.1.1](https://github.com/abc-utils/dynamic-module-federation/compare/v0.1.0...v0.1.1) (2024-03-06)
+
+
+### Bug Fixes
+
+* Update release.yml ([76ff776](https://github.com/abc-utils/dynamic-module-federation/commit/76ff776d423274de0c4afd5f7e28bfe1ceca0f96))
+
 # [0.1.0](https://github.com/abc-utils/dynamic-module-federation/compare/v0.0.2...v0.1.0) (2024-03-06)
 
 
