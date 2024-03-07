@@ -37,4 +37,4 @@ import ModFedRemoteLoader from 'dynamic-module-federation'
 >
 ```
 
-A demo of using this application is shown on https://github.com/abc-utils/dynamic-module-federation-example .
+You can view a demonstration of utilizing this application at https://github.com/abc-utils/dynamic-module-federation-example .
