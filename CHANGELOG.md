@@ -1,3 +1,15 @@
+# [0.3.0](https://github.com/abc-utils/dynamic-module-federation/compare/v0.2.0...v0.3.0) (2024-03-16)
+
+
+### Bug Fixes
+
+* commitizen added to the repo ([1a9a5ed](https://github.com/abc-utils/dynamic-module-federation/commit/1a9a5eda77c0f38b628fc573d94cc713af2a8a9b))
+
+
+### Features
+
+* **hook:** useFederatedComponent hook added as export ([4aa567b](https://github.com/abc-utils/dynamic-module-federation/commit/4aa567bb9fb94c1ab3273bbd6387b6f60eb0f0fa))
+
 # [0.2.0](https://github.com/abc-utils/dynamic-module-federation/compare/v0.1.1...v0.2.0) (2024-03-06)
 
 
