@@ -27,7 +27,7 @@ To import remote module as a react component:
 import ModFedRemoteLoader from 'dynamic-module-federation'
 
 <ModFedRemoteLoader
-  remoteUrl={/* use the remote url of the application. Ex: http://localhost:3001/remoteEntry.js */}
+  remoteUrl={/* Use the remote url of the application. Ex: http://localhost:3001/remoteEntry.js */}
   scope={/* The name of the remote application */}
   module={ /* The module from the remote app that you want to use Ex: "./Button" */}
   loadingComponent={/* Optional. To show a loading screen while the remote module is getting loaded */}
