@@ -2,7 +2,7 @@
 
 This package provides React compatible component as well as hook to load and render Module-federated micro-apps in dynamic way.
 
-- It will dynamically import the repote applications and will only import the part of the remote application that is required.
+- It will dynamically import the remote applications and will only import the part of the remote application that is required.
 - It automatically handles the scenario where multiple instances of remote app is consumed inside the host application.
 - It provides easy to use react component and hook to use the imported modules from remote app.
 
@@ -31,9 +31,9 @@ import ModFedRemoteLoader from 'dynamic-module-federation'
   scope={/* The name of the remote application */}
   module={ /* The module from the remote app that you want to use Ex: "./Button" */}
   loadingComponent={/* Optional. To show a loading screen while the remote module is getting loaded */}
-  remoteEntryLoadedCallback={/* Optional. If we want to run some functions after the remote Entry file is loaded. The logging utilities can be added here. */}
+  remoteEntryLoadedCallback={/* Optional. If you want to run some functions after the remote Entry file is loaded. The logging utilities can be added here. */}
   errorLogCallback={/* Optional. If we want to run any function in case of error while loading the remote module. The logging utilities can be added here */}
-  props={/* Optional. To add any optional parametrs in the component */ }
+  props={/* Optional. To add any optional parameters in the component */ }
 >
 ```
 It also allows to load modules from remote app through a hook. Use the hook useFederatedComponent for this purpose.
