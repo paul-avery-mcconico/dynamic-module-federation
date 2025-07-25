@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/abc-utils/dynamic-module-federation/compare/v0.3.0...v0.3.1) (2025-07-25)
+
+
+### Bug Fixes
+
+* fixes typos in the package ([8548c45](https://github.com/abc-utils/dynamic-module-federation/commit/8548c45e132d4473ecf7dfc8a51910246e0ca8c8))
+
 # [0.3.0](https://github.com/abc-utils/dynamic-module-federation/compare/v0.2.0...v0.3.0) (2024-03-16)
 
 
