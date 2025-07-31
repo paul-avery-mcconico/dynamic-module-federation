@@ -4,12 +4,13 @@ export const injectScript = ({
   remoteUrl,
   scriptId,
   scope,
+  type = 'text/javascript',
   onSuccess = () => {},
   onError = () => {},
 }: InjectScriptProps) => {
   const element = document.createElement('script')
   element.src = remoteUrl
-  element.type = 'text/javascript'
+  element.type = type
   element.async = true
   if (scriptId) {
     element.id = scriptId
